@@ -1,27 +1,64 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erro {{codigo}} - {{marca}} {{modelo}} | Guia de Resolução</title>
+    <meta name="description" content="Descubra o que significa o erro {{codigo}} no equipamento {{marca}} {{modelo}}, seus sintomas e o passo a passo para resolver o problema.">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #d32f2f; }
-        .box { background: #f4f4f4; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        :root { --primary: #d32f2f; --bg: #f8f9fa; --text: #333; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; color: var(--text); background-color: #fff; max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; }
+        h1 { color: var(--primary); margin-bottom: 5px; font-size: 1.8em; }
+        .breadcrumb { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .breadcrumb a { color: #0056b3; text-decoration: none; }
+        .box { background: var(--bg); padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .box h2 { margin-top: 0; font-size: 1.3em; color: #222; }
+        .alert { background: #fff3cd; color: #856404; padding: 15px; border-radius: 5px; font-size: 0.9em; margin-top: 30px; border-left: 4px solid #ffeeba; }
+        .ad-slot { background: #eaeaea; text-align: center; padding: 20px; margin: 20px 0; color: #888; font-size: 0.9em; border: 1px dashed #ccc; }
+        footer { margin-top: 40px; text-align: center; font-size: 0.9em; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
+        .btn-voltar { display: inline-block; margin-top: 20px; padding: 10px 15px; background: #eee; color: #333; text-decoration: none; border-radius: 5px; }
+        .btn-voltar:hover { background: #ddd; }
     </style>
 </head>
 <body>
-    <h1>Diagnóstico: Código {{codigo}} ({{marca}})</h1>
-    <p>Guia rápido para resolução de falhas no equipamento <strong>{{marca}} {{modelo}}</strong>.</p>
-    
-    <div class="box">
-        <h2>Sintoma Apresentado</h2>
-        <p>{{sintoma}}</p>
+    <div class="breadcrumb">
+        <a href="index.html">← Início</a> / {{marca}} / Diagnóstico
     </div>
 
-    <div class="box">
-        <h2>Como Resolver (Passo a Passo)</h2>
-        <p>{{solucao}}</p>
+    <header>
+        <h1>Diagnóstico: Código {{codigo}}</h1>
+        <p>Guia de resolução de falhas para <strong>{{marca}} {{modelo}}</strong></p>
+    </header>
+
+    <!-- O bloco abaixo é onde você colará o script do AdSense no futuro -->
+    <div class="ad-slot">
+        Espaço reservado para Anúncio (Topo)
     </div>
+    
+    <main>
+        <div class="box">
+            <h2>⚠️ Sintoma Apresentado</h2>
+            <p>{{sintoma}}</p>
+        </div>
+
+        <div class="box" style="border-left-color: #28a745;">
+            <h2>🛠️ Como Resolver (Solução)</h2>
+            <p>{{solucao}}</p>
+        </div>
+
+        <!-- O bloco abaixo é onde você colará outro script do AdSense -->
+        <div class="ad-slot">
+            Espaço reservado para Anúncio (Conteúdo)
+        </div>
+
+        <div class="alert">
+            <strong>Aviso de Segurança:</strong> Desligue sempre o equipamento da rede elétrica antes de realizar qualquer teste ou manutenção. Se não tiver experiência técnica, procure um profissional qualificado.
+        </div>
+    </main>
+
+    <footer>
+        <a href="index.html" class="btn-voltar">Voltar para a lista de erros</a>
+    </footer>
 </body>
 </html>
