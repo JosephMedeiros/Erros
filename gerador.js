@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const csvPath = path.join(__dirname, 'dados', 'base_erros.csv');
@@ -11,7 +11,7 @@ const csvData = fs.readFileSync(csvPath, 'utf8');
 const linhas = csvData.trim().split('\n');
 const cabecalhos = linhas[0].split(',');
 
-// Configura��o para o Index e Sitemap
+// Configuração para o Index e Sitemap
 const urlBase = 'https://josephmedeiros.github.io/Erros/'; // Sua URL do GitHub
 let linksIndex = '';
 let urlsSitemap = '';
@@ -33,15 +33,15 @@ for (let i = 1; i < linhas.length; i++) {
     paginaHTML = paginaHTML.replace(/{{sintoma}}/g, dados.sintoma);
     paginaHTML = paginaHTML.replace(/{{solucao}}/g, dados.solucao);
 
-    // Formata o nome do arquivo removendo espa�os extras
+    // Formata o nome do arquivo removendo espaços extras
     const nomeArquivo = `erro-${dados.codigo.toLowerCase()}-${dados.marca.toLowerCase()}.html`.replace(/\s+/g, '-');
     const caminhoSaida = path.join(docsPath, nomeArquivo);
 
-    // Salva a p�gina individual
+    // Salva a página individual
     fs.writeFileSync(caminhoSaida, paginaHTML);
-    console.log(`P�gina gerada: ${nomeArquivo}`);
+    console.log(`Página gerada: ${nomeArquivo}`);
 
-    // Prepara a linha de link para a p�gina inicial (index.html)
+    // Prepara a linha de link para a página inicial (index.html)
     linksIndex += `<li><a href="${nomeArquivo}">Erro <strong>${dados.codigo}</strong> - ${dados.marca} ${dados.modelo}</a></li>\n`;
 
     // Prepara a linha do sitemap para o Google (sitemap.xml)
@@ -49,14 +49,14 @@ for (let i = 1; i < linhas.length; i++) {
 }
 
 // ---------------------------------------------------------
-// 1. GERA��O AUTOM�TICA DA P�GINA INICIAL (INDEX.HTML)
+// 1. GERAÇÃO AUTOMÁTICA DA PÁGINA INICIAL (INDEX.HTML)
 // ---------------------------------------------------------
 const htmlIndex = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diret�rio de C�digos de Erro</title>
+    <title>Diretório de Códigos de Erro</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
         h1 { color: #333; }
@@ -67,8 +67,8 @@ const htmlIndex = `<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <h1>Diret�rio de C�digos de Erro</h1>
-    <p>Selecione o c�digo abaixo para ver o diagn�stico passo a passo:</p>
+    <h1>Diretório de Códigos de Erro</h1>
+    <p>Selecione o código abaixo para ver o diagnóstico passo a passo:</p>
     <ul>
         ${linksIndex}
     </ul>
@@ -76,10 +76,10 @@ const htmlIndex = `<!DOCTYPE html>
 </html>`;
 
 fs.writeFileSync(path.join(docsPath, 'index.html'), htmlIndex);
-console.log('? P�gina inicial (index.html) gerada com sucesso!');
+console.log('? Página inicial (index.html) gerada com sucesso!');
 
 // ---------------------------------------------------------
-// 2. GERA��O AUTOM�TICA DO MAPA DO GOOGLE (SITEMAP.XML)
+// 2. GERAÇÃO AUTOMÁTICA DO MAPA DO GOOGLE (SITEMAP.XML)
 // ---------------------------------------------------------
 const xmlSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
